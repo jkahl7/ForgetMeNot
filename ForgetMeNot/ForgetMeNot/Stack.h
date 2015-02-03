@@ -10,4 +10,9 @@
 
 @interface Stack : NSObject
 
+
+//forward declration of the stack mutable array data structure
+@property (strong, nonatomic) NSMutableArray *stack;
+
+
 @end
