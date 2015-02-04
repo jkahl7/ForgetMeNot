@@ -9,5 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Queue : NSObject
-
+{
+  NSMutableArray *queue;
+  NSString *personA, *personB, *personC;
+}
+-(void)deQueue;
+-(instancetype)enQueue:(NSString *)person;
 @end
+

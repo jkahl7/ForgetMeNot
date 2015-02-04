@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 
+
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *homeButton;
@@ -23,6 +24,7 @@
 
 @implementation MapViewController
 
+
 //this appears to continue to call in mapView - will keep refreshing to the showUserLocation if it is set within the method
 - (void)viewDidLoad
 {
@@ -33,74 +35,73 @@
   
   //init the locationManager object, set the VC as a delegate
   self.locationManager = [[CLLocationManager alloc] init];
+  
   self.locationManager.delegate = self;
  
-  //asks the user for permission to access their location
-  [self.locationManager requestWhenInUseAuthorization];
+  /**********    1   check if locationServicesEnabled     *****/
+  if ([CLLocationManager locationServicesEnabled])
+  {
+    /********    2   check if previous Auth granted     *****/
+    if ([CLLocationManager authorizationStatus] == 0) //if true, then kCLAuthorizationStatusNotDetermined = 0
+    { /******    3   if previous Auth !granted, request Auth - Auth type must be set in plist!   **/
+      [self.locationManager requestWhenInUseAuthorization];
+    } else {/*   4   previous Auth granted, proceed to get, display, and update users location   **/
+      self.mapView.showsUserLocation = true;
+      
+      [self.locationManager startUpdatingLocation];
+      
+      [self.mapView setMapType        : MKMapTypeStandard];
+      [self.mapView setZoomEnabled    : true];
+      [self.mapView setScrollEnabled  : true];
+      
+    } /*******   5   location services are not enabled, inform user  **/
+  } else {
+    NSLog(@"Location services are not enabled");
+  }
   
-  [self.mapView setMapType:MKMapTypeStandard];
-  [self.mapView setZoomEnabled:YES];
-  [self.mapView setScrollEnabled:YES];
-  //[self.locationManager startUpdatingLocation];
-  
-  //self.mapView.showsUserLocation = YES;
+  //add longpress recognizer
+  UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                          action:@selector(mapLongPress:)];
+  [self.mapView addGestureRecognizer:longPress];
 }
 
-//is called once when the MapVC is instantiated.
--(void)viewDidAppear:(BOOL)animated
-{
-  [self.locationManager startUpdatingLocation];
-  self.mapView.showsUserLocation = YES;
-  /*
-  //initial location is 39.277988,-76.622704 (M&T bank)
-  CLLocationCoordinate2D initialLocation;
-  initialLocation.latitude = 39.277988;
-  initialLocation.longitude = -76.622704;
-  
-  MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(initialLocation, 2000, 2000);
-  
-  [self.mapView setRegion:viewRegion animated:YES];
-   */
-  
-  
-}
 
 // 47.6277904,-122.3427506
 - (IBAction)homeClicked:(id)sender
 {
-  [self.locationManager stopUpdatingLocation];
+  //[self.locationManager stopUpdatingLocation];
   CLLocationCoordinate2D initialLocation;
-  initialLocation.latitude = 47.6277904;
-  initialLocation.longitude = -122.3427506;
+  initialLocation.latitude = self.mapView.userLocation.coordinate.latitude;
+  initialLocation.longitude = self.mapView.userLocation.coordinate.longitude;
+  
+  //initialLocation.latitude  = 47.6277904;
+  //initialLocation.longitude = -122.3427506;
   
   MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(initialLocation, 750, 750);
   
-  [self.mapView setRegion:region animated:YES];
+  [self.mapView setRegion:region
+                 animated:true];
   
   //Starts the generation of updates that report the user’s current location
   //The accuracy of the location data.
   //self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
   // minimum distance (measured in meters) a device must move horizontally before an update event is generated
   //self.locationManager.distanceFilter = kCLDistanceFilterNone;
-  
-  printf("homeClicked %d\n", 98109);
 }
 
 
 // L&L @42.3998257,-71.1271535
 - (IBAction)oldHomeClicked:(id)sender
 {
-  [self.locationManager stopUpdatingLocation];
+  //[self.locationManager stopUpdatingLocation];
   CLLocationCoordinate2D initialLocation;
-  initialLocation.latitude = 42.3998257;
+  initialLocation.latitude  = 42.3998257;
   initialLocation.longitude = -71.1271535;
   
   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(initialLocation, 750, 750);
   
-  [self.mapView setRegion:viewRegion animated:YES];
-
-  printf("oldhomeClicked %i\n", 02144);
-  NSLog(@"42.3998257,-71.1271535");
+  [self.mapView setRegion:viewRegion
+                 animated:YES];
 }
 
 
@@ -109,15 +110,89 @@
 {
   [self.locationManager stopUpdatingLocation];
   CLLocationCoordinate2D initialLocation;
-  initialLocation.latitude = 39.313729;
+  initialLocation.latitude  = 39.313729;
   initialLocation.longitude = -76.473313;
   
   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(initialLocation, 750, 750);
   
   [self.mapView setRegion:viewRegion animated:YES];
+}
 
-  printf("olderHomeClicked %d\n", 21221);
-  NSLog(@"39.313729,-76.473313");
+
+//custom method which creates an annotation at a the location of a long touch gesture
+-(void)mapLongPress:(id)sender
+{
+  UILongPressGestureRecognizer *longPress = (UILongPressGestureRecognizer *)sender;
+  
+  if (longPress.state == 3) //enum signaling that the press has ended UIGestureRecognizerStateEnded
+  {
+    CGPoint location = [longPress locationInView:self.mapView]; //stores location of longpress in CGPoint struct
+    [self.mapView convertPoint:location
+          toCoordinateFromView:self.mapView]; //converts the CGPoint location data into coordinates for the mapView
+    
+    CLLocationCoordinate2D mapCoordinates = [self.mapView convertPoint:location toCoordinateFromView:self.mapView];
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate         = mapCoordinates;
+    annotation.title              = @"New Location:";
+    
+    [self.mapView addAnnotation:annotation];
+  }
+}
+
+// will allow us to customize the pin we dropped on the map - requuired method
+-(MKAnnotationView *)mapView:(MKMapView *)mapView
+           viewForAnnotation:(id<MKAnnotation>)annotation
+{
+  MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                                        reuseIdentifier:@"annotationView"];
+  
+  annotationView.pinColor       = MKPinAnnotationColorGreen;
+  annotationView.animatesDrop   = true;
+  annotationView.canShowCallout = true;
+  
+  annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+  
+  return annotationView;
+}
+
+
+//another delegate method in mapview - gives you the annotation view that was clicked on
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
+                     calloutAccessoryControlTapped:(UIControl *)control
+{
+  MKPointAnnotation *annotation = view.annotation;
+  annotation.title = @"here";
+  
+  //perform segue in this method   ctl drag and present modally - "SHOW_DETAIL" identifier
+  
+  
+  [self performSegueWithIdentifier:@"SHOW_OPTIONS"
+                            sender:self];
+}
+
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+  if (status == 0) //access denied or changed in settings
+  {
+    NSLog(@"Location Auth status changed");
+  } else {
+    NSLog(@"Location Auth Accepted");
+    self.mapView.showsUserLocation = true;
+
+    [self.locationManager startUpdatingLocation];
+    
+    [self.mapView setMapType        : MKMapTypeStandard];
+    [self.mapView setZoomEnabled    : true];
+    [self.mapView setScrollEnabled  : true];
+  }
+}
+
+/*  triggers whenenver the location is updated
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+  CLLocation *location = locations.firstObject;
 }
 
 
@@ -127,35 +202,8 @@
   [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
--(NSString *)deviceLocation
-{
-  return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
-}
-
--(NSString *)deviceLatatude
-{
-  return [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
-}
-
--(NSString *)deviceLongitude
-{
-  return [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
-}
-
--(NSString *)deviceAltitude
-{
-  return [NSString stringWithFormat:@"%f",self.locationManager.location.altitude];
-}
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
+
+
 
 @end

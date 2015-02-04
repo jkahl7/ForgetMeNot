@@ -9,10 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @interface Stack : NSObject
+{
+  
+  NSMutableArray *stack;
+  NSString *personA, *personB, *personC;
+  int arrayIndex;
+}
+@property (strong, nonatomic) NSArray *arrayPtr;
 
+-(void)push:(NSString *)character;
+-()pop;
+-(id)peek;
+-(void)peopleMaker; // populates people
 
 //forward declration of the stack mutable array data structure
-@property (strong, nonatomic) NSMutableArray *stack;
 
 
 @end

@@ -17,6 +17,7 @@
 		4388377D1A8013400038EC3F /* ForgetMeNotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4388377C1A8013400038EC3F /* ForgetMeNotTests.m */; };
 		438837871A80134E0038EC3F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438837861A80134E0038EC3F /* MapKit.framework */; };
 		4388378D1A801E030038EC3F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4388378C1A801E030038EC3F /* MapViewController.m */; };
+		43D925891A817622005C436A /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D925881A817622005C436A /* OptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		438837861A80134E0038EC3F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4388378B1A801E030038EC3F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
 		4388378C1A801E030038EC3F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
+		43D925871A817622005C436A /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		43D925881A817622005C436A /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 			children = (
 				4388378B1A801E030038EC3F /* MapViewController.h */,
 				4388378C1A801E030038EC3F /* MapViewController.m */,
+				43D925871A817622005C436A /* OptionsViewController.h */,
+				43D925881A817622005C436A /* OptionsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				438837631A8013400038EC3F /* main.m in Sources */,
 				4340AB971A8029E100DB5BB4 /* Stack.m in Sources */,
 				4340AB941A8029C900DB5BB4 /* Queue.m in Sources */,
+				43D925891A817622005C436A /* OptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
