@@ -92,12 +92,18 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oX7-ux-CQg" id="1cL-a4-SWQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Details" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ix-ty-KZa">
-                                                    <rect key="frame" x="8" y="11" width="404" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Details" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ix-ty-KZa">
+                                                    <rect key="frame" x="8" y="11" width="584" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8Ix-ty-KZa" firstAttribute="leading" secondItem="1cL-a4-SWQ" secondAttribute="leadingMargin" id="6PG-mS-mLi"/>
+                                                <constraint firstItem="8Ix-ty-KZa" firstAttribute="top" secondItem="1cL-a4-SWQ" secondAttribute="topMargin" constant="3" id="jdb-LK-CGM"/>
+                                                <constraint firstItem="8Ix-ty-KZa" firstAttribute="bottom" secondItem="1cL-a4-SWQ" secondAttribute="bottomMargin" id="jyp-Od-ymK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8Ix-ty-KZa" secondAttribute="trailing" id="vWn-Ew-mzJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

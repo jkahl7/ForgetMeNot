@@ -16,6 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  
+  if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)])
+  {
+    [application registerUserNotificationSettings:[UIUserNotificationSettings
+                                 settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound
+                                       categories:nil]];
+    //TODO: add the rest here
+  }
+  
+  
   // Override point for customization after application launch.
   return YES;
 }

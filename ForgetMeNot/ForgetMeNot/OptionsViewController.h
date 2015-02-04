@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MapViewController.h"
+#import <NotificationCenter/NotificationCenter.h>
 @interface OptionsViewController : UITableViewController <UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *detailsText;
+
+@property (strong, nonatomic) MKPointAnnotation *annotationInOptions;
+
+@property (strong, nonatomic) CLLocationManager *optionsLocationManager;
+//TODO: add location manager ClLocationManager
 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;

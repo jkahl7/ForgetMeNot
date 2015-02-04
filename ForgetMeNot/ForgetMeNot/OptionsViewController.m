@@ -7,6 +7,7 @@
 //
 
 #import "OptionsViewController.h"
+#import "MapViewController.h"
 
 @interface OptionsViewController ()
 
@@ -22,14 +23,10 @@
   
   self.saveButton.enabled = false;
   
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  self.detailsText.placeholder = self.annotationInOptions.title;
+
 }
 
-//-(void)textFieldDidEndEditing:(UITextField *)textField
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
@@ -37,12 +34,21 @@
 }
 
 
-
--(IBAction)saveButtonClicked:(id)sender
+- (IBAction)saveButtonClicked:(id)sender //this will send out a notification that the text has been updated.
 {
-  //perform segue here
-  NSLog(@"%@", self.detailsText.text);
-  //send contents of textField to MapVC
+  if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) //??
+  {
+   
+    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:self.annotationInOptions.coordinate
+                                                                 radius:200
+                                                             identifier:@"Reminder"];
+    [self.optionsLocationManager startMonitoringForRegion:region];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ReminderAdded"
+                                                        object:self
+                                                      userInfo:@{@"key": @[region, self.detailsText.text]}];
+  }                                                             //TODO: this is not a very elegant solution.....
+
   [self.navigationController popToRootViewControllerAnimated:true];
 }
 
