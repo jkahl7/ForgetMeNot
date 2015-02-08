@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4340AB941A8029C900DB5BB4 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4340AB931A8029C800DB5BB4 /* Queue.m */; };
+		4340AB941A8029C900DB5BB4 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4340AB931A8029C805BB4 /* Queue.m */; };
 		4340AB971A8029E100DB5BB4 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4340AB961A8029E100DB5BB4 /* Stack.m */; };
+		4365581C1A840C190054481B /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4365581B1A840C190054481B /* InterfaceController.m */; };
+		4365581F1A840C190054481B /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4365581E1A840C190054481B /* NotificationController.m */; };
+		436558221A840C190054481B /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436558211A840C190054481B /* GlanceController.m */; };
+		436558241A840C190054481B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 436558231A840C190054481B /* Images.xcassets */; };
+		436558281A840C190054481B /* ForgetMeNot WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 436558271A840C190054481B /* ForgetMeNot WatchKit App.app */; };
+		436558301A840C190054481B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4365582E1A840C190054481B /* Interface.storyboard */; };
+		436558351A840C190054481B /* ForgetMeNot WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 436558151A840C190054481B /* ForgetMeNot WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		436558491A841DF70054481B /* MapInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436558481A841DF70054481B /* MapInterfaceController.m */; };
+		4365584B1A8437940054481B /* ReminderRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436558411A8416990054481B /* ReminderRowController.m */; };
+		4365584D1A8541CF0054481B /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4365584C1A8541CF0054481B /* Node.swift */; };
+		4365584F1A8541E40054481B /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4365584E1A8541E40054481B /* LinkedList.swift */; };
+		436558541A855FF40054481B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438837861A80134E0038EC3F /* MapKit.framework */; };
 		438837631A8013400038EC3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 438837621A8013400038EC3F /* main.m */; };
 		438837661A8013400038EC3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 438837651A8013400038EC3F /* AppDelegate.m */; };
 		4388376C1A8013400038EC3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4388376A1A8013400038EC3F /* Main.storyboard */; };
@@ -22,6 +34,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		436558291A840C190054481B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 438837551A8013400038EC3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 436558261A840C190054481B;
+			remoteInfo = "ForgetMeNot WatchKit App";
+		};
+		436558331A840C190054481B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 438837551A8013400038EC3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 436558141A840C190054481B;
+			remoteInfo = "ForgetMeNot WatchKit Extension";
+		};
 		438837771A8013400038EC3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 438837551A8013400038EC3F /* Project object */;
@@ -31,11 +57,46 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4365583C1A840C190054481B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				436558351A840C190054481B /* ForgetMeNot WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4340AB921A8029C800DB5BB4 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		4340AB931A8029C800DB5BB4 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
 		4340AB951A8029E100DB5BB4 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		4340AB961A8029E100DB5BB4 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		436558151A840C190054481B /* ForgetMeNot WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ForgetMeNot WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		436558181A840C190054481B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		436558191A840C190054481B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4365581A1A840C190054481B /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		4365581B1A840C190054481B /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		4365581D1A840C190054481B /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		4365581E1A840C190054481B /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		436558201A840C190054481B /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		436558211A840C190054481B /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		436558231A840C190054481B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		436558271A840C190054481B /* ForgetMeNot WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ForgetMeNot WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4365582D1A840C190054481B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4365582F1A840C190054481B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		436558401A8416990054481B /* ReminderRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderRowController.h; sourceTree = "<group>"; };
+		436558411A8416990054481B /* ReminderRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderRowController.m; sourceTree = "<group>"; };
+		436558471A841DF70054481B /* MapInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapInterfaceController.h; sourceTree = "<group>"; };
+		436558481A841DF70054481B /* MapInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapInterfaceController.m; sourceTree = "<group>"; };
+		4365584C1A8541CF0054481B /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		4365584E1A8541E40054481B /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		436558521A8543000054481B /* ForgetMeNot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ForgetMeNot.entitlements; sourceTree = "<group>"; };
+		436558531A855EC20054481B /* ForgetMeNot WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ForgetMeNot WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		4388375D1A8013400038EC3F /* ForgetMeNot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForgetMeNot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438837611A8013400038EC3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		438837621A8013400038EC3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +118,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		436558121A840C190054481B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				436558541A855FF40054481B /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4388375A1A8013400038EC3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,12 +144,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		436558161A840C190054481B /* ForgetMeNot WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				436558531A855EC20054481B /* ForgetMeNot WatchKit Extension.entitlements */,
+				4365581A1A840C190054481B /* InterfaceController.h */,
+				4365581B1A840C190054481B /* InterfaceController.m */,
+				436558471A841DF70054481B /* MapInterfaceController.h */,
+				436558481A841DF70054481B /* MapInterfaceController.m */,
+				4365581D1A840C190054481B /* NotificationController.h */,
+				4365581E1A840C190054481B /* NotificationController.m */,
+				436558201A840C190054481B /* GlanceController.h */,
+				436558211A840C190054481B /* GlanceController.m */,
+				436558401A8416990054481B /* ReminderRowController.h */,
+				436558411A8416990054481B /* ReminderRowController.m */,
+				436558231A840C190054481B /* Images.xcassets */,
+				436558171A840C190054481B /* Supporting Files */,
+			);
+			path = "ForgetMeNot WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		436558171A840C190054481B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				436558181A840C190054481B /* Info.plist */,
+				436558191A840C190054481B /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4365582B1A840C190054481B /* ForgetMeNot WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				4365582E1A840C190054481B /* Interface.storyboard */,
+				4365582C1A840C190054481B /* Supporting Files */,
+			);
+			path = "ForgetMeNot WatchKit App";
+			sourceTree = "<group>";
+		};
+		4365582C1A840C190054481B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4365582D1A840C190054481B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		438837541A8013400038EC3F = {
 			isa = PBXGroup;
 			children = (
 				438837861A80134E0038EC3F /* MapKit.framework */,
 				4388375F1A8013400038EC3F /* ForgetMeNot */,
 				438837791A8013400038EC3F /* ForgetMeNotTests */,
+				436558161A840C190054481B /* ForgetMeNot WatchKit Extension */,
+				4365582B1A840C190054481B /* ForgetMeNot WatchKit App */,
 				4388375E1A8013400038EC3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +207,8 @@
 			children = (
 				4388375D1A8013400038EC3F /* ForgetMeNot.app */,
 				438837761A8013400038EC3F /* ForgetMeNotTests.xctest */,
+				436558151A840C190054481B /* ForgetMeNot WatchKit Extension.appex */,
+				436558271A840C190054481B /* ForgetMeNot WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +216,7 @@
 		4388375F1A8013400038EC3F /* ForgetMeNot */ = {
 			isa = PBXGroup;
 			children = (
+				436558521A8543000054481B /* ForgetMeNot.entitlements */,
 				438837641A8013400038EC3F /* AppDelegate.h */,
 				438837651A8013400038EC3F /* AppDelegate.m */,
 				4388376D1A8013400038EC3F /* Images.xcassets */,
@@ -140,6 +260,8 @@
 				4340AB951A8029E100DB5BB4 /* Stack.h */,
 				4340AB961A8029E100DB5BB4 /* Stack.m */,
 				4340AB921A8029C800DB5BB4 /* Queue.h */,
+				4365584C1A8541CF0054481B /* Node.swift */,
+				4365584E1A8541E40054481B /* LinkedList.swift */,
 				4340AB931A8029C800DB5BB4 /* Queue.m */,
 			);
 			name = Model;
@@ -170,6 +292,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		436558141A840C190054481B /* ForgetMeNot WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4365583B1A840C190054481B /* Build configuration list for PBXNativeTarget "ForgetMeNot WatchKit Extension" */;
+			buildPhases = (
+				436558111A840C190054481B /* Sources */,
+				436558121A840C190054481B /* Frameworks */,
+				436558131A840C190054481B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4365582A1A840C190054481B /* PBXTargetDependency */,
+			);
+			name = "ForgetMeNot WatchKit Extension";
+			productName = "ForgetMeNot WatchKit Extension";
+			productReference = 436558151A840C190054481B /* ForgetMeNot WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		436558261A840C190054481B /* ForgetMeNot WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4365583A1A840C190054481B /* Build configuration list for PBXNativeTarget "ForgetMeNot WatchKit App" */;
+			buildPhases = (
+				436558251A840C190054481B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ForgetMeNot WatchKit App";
+			productName = "ForgetMeNot WatchKit App";
+			productReference = 436558271A840C190054481B /* ForgetMeNot WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		4388375C1A8013400038EC3F /* ForgetMeNot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 438837801A8013400038EC3F /* Build configuration list for PBXNativeTarget "ForgetMeNot" */;
@@ -177,10 +332,12 @@
 				438837591A8013400038EC3F /* Sources */,
 				4388375A1A8013400038EC3F /* Frameworks */,
 				4388375B1A8013400038EC3F /* Resources */,
+				4365583C1A840C190054481B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				436558341A840C190054481B /* PBXTargetDependency */,
 			);
 			name = ForgetMeNot;
 			productName = ForgetMeNot;
@@ -214,9 +371,28 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Josh Kahl";
 				TargetAttributes = {
+					436558141A840C190054481B = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = RPZ9M4VS48;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					436558261A840C190054481B = {
+						CreatedOnToolsVersion = 6.2;
+					};
 					4388375C1A8013400038EC3F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = RPZ9M4VS48;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -243,11 +419,30 @@
 			targets = (
 				4388375C1A8013400038EC3F /* ForgetMeNot */,
 				438837751A8013400038EC3F /* ForgetMeNotTests */,
+				436558141A840C190054481B /* ForgetMeNot WatchKit Extension */,
+				436558261A840C190054481B /* ForgetMeNot WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		436558131A840C190054481B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				436558241A840C190054481B /* Images.xcassets in Resources */,
+				436558281A840C190054481B /* ForgetMeNot WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		436558251A840C190054481B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				436558301A840C190054481B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4388375B1A8013400038EC3F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,13 +463,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		436558111A840C190054481B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4365581F1A840C190054481B /* NotificationController.m in Sources */,
+				4365581C1A840C190054481B /* InterfaceController.m in Sources */,
+				436558491A841DF70054481B /* MapInterfaceController.m in Sources */,
+				436558221A840C190054481B /* GlanceController.m in Sources */,
+				4365584B1A8437940054481B /* ReminderRowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		438837591A8013400038EC3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4365584F1A8541E40054481B /* LinkedList.swift in Sources */,
 				4388378D1A801E030038EC3F /* MapViewController.m in Sources */,
 				438837661A8013400038EC3F /* AppDelegate.m in Sources */,
 				438837631A8013400038EC3F /* main.m in Sources */,
+				4365584D1A8541CF0054481B /* Node.swift in Sources */,
 				43A2DE211A81D6A7006B1726 /* NetController.m in Sources */,
 				4340AB971A8029E100DB5BB4 /* Stack.m in Sources */,
 				4340AB941A8029C900DB5BB4 /* Queue.m in Sources */,
@@ -293,6 +502,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4365582A1A840C190054481B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 436558261A840C190054481B /* ForgetMeNot WatchKit App */;
+			targetProxy = 436558291A840C190054481B /* PBXContainerItemProxy */;
+		};
+		436558341A840C190054481B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 436558141A840C190054481B /* ForgetMeNot WatchKit Extension */;
+			targetProxy = 436558331A840C190054481B /* PBXContainerItemProxy */;
+		};
 		438837781A8013400038EC3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4388375C1A8013400038EC3F /* ForgetMeNot */;
@@ -301,6 +520,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4365582E1A840C190054481B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4365582F1A840C190054481B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		4388376A1A8013400038EC3F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -320,6 +547,74 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		436558361A840C190054481B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ForgetMeNot WatchKit Extension/ForgetMeNot WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ForgetMeNot WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		436558371A840C190054481B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ForgetMeNot WatchKit Extension/ForgetMeNot WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = "ForgetMeNot WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		436558381A840C190054481B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = ForgetMeNot_WatchKit_Extension;
+				INFOPLIST_FILE = "ForgetMeNot WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		436558391A840C190054481B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				IBSC_MODULE = ForgetMeNot_WatchKit_Extension;
+				INFOPLIST_FILE = "ForgetMeNot WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		4388377E1A8013400038EC3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -402,9 +697,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ForgetMeNot/ForgetMeNot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ForgetMeNot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -412,9 +713,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ForgetMeNot/ForgetMeNot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ForgetMeNot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -455,6 +761,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4365583A1A840C190054481B /* Build configuration list for PBXNativeTarget "ForgetMeNot WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				436558381A840C190054481B /* Debug */,
+				436558391A840C190054481B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4365583B1A840C190054481B /* Build configuration list for PBXNativeTarget "ForgetMeNot WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				436558361A840C190054481B /* Debug */,
+				436558371A840C190054481B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		438837581A8013400038EC3F /* Build configuration list for PBXProject "ForgetMeNot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
